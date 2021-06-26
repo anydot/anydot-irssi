@@ -8,11 +8,12 @@ servers = (
     autoconnect = "yes";
   },
   {
-    address = "irc.freenode.net";
-    chatnet = "freenode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
+    address = "irc.libera.chat";
+    chatnet = "liberachat";
+    port = "6697";
+    use_tls = "yes";
+    tls_cert = "~/.irssi/libera.pem";
+    tls_verify = "no";
     autoconnect = "yes";
   }
 );
@@ -80,10 +81,7 @@ chatnets = {
     max_whois = "30";
   };
   SILC = { type = "SILC"; };
-  freenode = {
-    type = "IRC";
-    autosendcmd = "^MSG NickServ identify anydot mTM@st8tndJk";
-  };
+  liberachat = { type = "IRC"; sasl_mechanism = "external"; };
 };
 
 channels = (
